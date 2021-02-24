@@ -15,6 +15,10 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import { orange, green } from "@material-ui/core/colors";
+import "fontsource-roboto";
+
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles({
   root: {
@@ -23,11 +27,17 @@ const useStyles = makeStyles({
     marginBottom: 15,
     borderRadius: 15,
     color: "white",
-    padding: "0 30px",
+    padding: "5 30px",
   },
 });
 
 const theme = createMuiTheme({
+  typography: {
+    h2: {
+      fontSize: 18,
+      marginBottom: 15
+    },
+  },
   palette: {
     primary: {
       main: orange[500],
@@ -69,6 +79,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
+          <Typography variant="h2" component="div">
+            Welcome to MUI
+          </Typography>
+          <Typography variant="subtitle1">
+            Learn how to use Material Ui
+          </Typography>
           <ButtonStyled />
           <TextField
             variant="filled"
