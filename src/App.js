@@ -7,6 +7,7 @@ import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import TextField from "@material-ui/core/TextField";
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true);
@@ -16,6 +17,8 @@ function CheckboxExample() {
       control={
         <Checkbox
           checked={checked}
+          icon={<DeleteIcon />}
+          checkedIcon={<SaveIcon />}
           onChange={(e) => setChecked(e.target.checked)}
           inputProps={{
             "aria-label": "secondary checkbox",
@@ -31,6 +34,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField
+          variant="filled"
+          color="secondary"
+          type="email"
+          label="The Time"
+          placeholder="testing@test.com"
+        />
         <CheckboxExample />
         <ButtonGroup variant="contained">
           <Button startIcon={<SaveIcon />} size="large" color="primary">
